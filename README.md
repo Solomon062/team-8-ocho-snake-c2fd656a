@@ -12,3 +12,4 @@ Make file contains commands needed.
 make test
 echo "{Solomon} was here" >> README.md
 solomon was here
+echo "solomon was here" 
