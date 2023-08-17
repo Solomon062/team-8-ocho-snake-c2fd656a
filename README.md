@@ -9,3 +9,6 @@ Make file contains commands needed.
 * `make test` Runs tests
 
 * `make run` Runs the program
+make test
+echo "{Solomon} was here" >> README.md
+solomon was here
