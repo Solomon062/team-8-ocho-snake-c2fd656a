@@ -44,11 +44,12 @@ class GameController:
             self.status.character_name = character_name
         else:
             self.status.character_name = DEFAULT_CHARACTER_NAME
+        my_char = Character(self.status.character_name)
 
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
-        pass
+        my_char.move(direction)
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
