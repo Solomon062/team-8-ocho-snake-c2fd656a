@@ -1,20 +1,20 @@
+from levelup.position import Position
+from levelup.direction import Direction
+
 class Character:
-    name = ""
-    position = (5,5)
 
     def __init__(self, character_name):
         self.name = character_name
-        self.position = position
+        self.current_position = Position(-100, -100)
+
     
-    def move(direction):
-        new_pos = (0,0)
+    def move(self, direction):
         match direction:
-            case 'n':
-                new_pos = (self.position[0], self.position[1]+1)
-            case 's':
-                new_pos = (self.position[0], self.position[1]-1)
-            case 'w':
-                new_pos = (self.position[0]-1, self.position[1])
-            case 'e':
-                new_pos = (self.position[0]+1, self.position[1])
-        return new_pos
+            case Direction.EAST:
+                self.current_position.x += 1
+            case Direction.SOUTH:
+                self.current_position.y -= 1
+            case Direction.WEST:
+                self.current_position.x -= 1
+            case Direction.NORTH:
+                self.current_position.y += 1
