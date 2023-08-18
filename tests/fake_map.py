@@ -2,7 +2,7 @@ from levelup.map import Map
 from levelup.position import Position
 from levelup.controller import Direction
 
-class FakeMap(Map):
+class FakeMap (Map):
 
     STUBBED_X = 3
     STUBBED_Y = 4
