@@ -1,4 +1,4 @@
-class Position:
+class Position ():
 
     x = -100
     y = -100
@@ -12,3 +12,7 @@ class Position:
             return True
         else:
             return False
+
+
+
+    

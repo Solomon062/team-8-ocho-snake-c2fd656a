@@ -1,20 +1,19 @@
 from levelup.position import Position
 from levelup.direction import Direction
+from levelup.map import Map
 
 class Character:
+    name = ""
+    current_position :Position = Position(-100,-100)
+    map :Map = Map()
 
     def __init__(self, character_name):
         self.name = character_name
-        self.current_position = Position(-100, -100)
 
+    def move(self, direction :Direction) -> None:
+        self.current_position = self.map.calculate_new_position(
+            self.current_position, direction)
     
-    def move(self, direction):
-        match direction:
-            case Direction.EAST:
-                self.current_position.x += 1
-            case Direction.SOUTH:
-                self.current_position.y -= 1
-            case Direction.WEST:
-                self.current_position.x -= 1
-            case Direction.NORTH:
-                self.current_position.y += 1
+    def enter_map(self, map :Map):
+        self.map = map
+        self.current_position = self.map.starting_position
